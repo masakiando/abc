@@ -5,6 +5,7 @@ class App extends Component {
     return (
       <div className="App">
         hello AR.js
+        こんにちは
       </div>
     );
   }
