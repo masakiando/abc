@@ -4,8 +4,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        hello AR.js
-        こんにちは
+        hello React
       </div>
     );
   }
