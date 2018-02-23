@@ -1,0 +1,1 @@
+{:rename-macros {}, :renames {}, :externs {THREE {Camera {}}}, :use-macros {}, :excludes #{}, :name ar-sample.camera, :imports nil, :requires {ig integrant.core, integrant.core integrant.core}, :cljs.spec/speced-vars [], :uses nil, :cljs.spec/registry-ref [], :require-macros nil, :cljs.analyzer/constants {:seen #{:camera}, :order [:camera]}, :doc nil}
