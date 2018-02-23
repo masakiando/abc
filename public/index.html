@@ -9,7 +9,6 @@
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -25,15 +24,11 @@
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root"></div>
-    <div id="app"></div>
-    <h1>hello Ar.js</h1>
-    <script src='../three.min.js'></script>
-    <script src="../stats.min.js"></script>
-    <!-- ar.js -->
-    <script src="../ar.min.js"></script>
-    <!-- <script src="https://threejs.org/build/three.min.js" type="text/javascript"></script> -->
-    <!-- <script src="https://jeromeetienne.github.io/AR.js/three.js/build/ar.min.js"></script> -->
+    <div id="root">react</div>
+    <div id="app">ar</div>
+    <script src="https://threejs.org/build/three.min.js" type="text/javascript"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/three.js/build/ar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js"></script>
     <script>
     //////////////////////////////////////////////////////////////////////////////////
   	//		Init
@@ -105,7 +100,7 @@
 
   	// create atToolkitContext
   	var arToolkitContext = new THREEx.ArToolkitContext({
-  		cameraParametersUrl: '../camera_para.dat',
+  		cameraParametersUrl: 'data/camera_para.dat',
   		detectionMode: 'mono',
   		maxDetectionRate: 30,
   		canvasWidth: 80*3,
@@ -133,16 +128,7 @@
   	scene.add(markerRoot)
   	var artoolkitMarker = new THREEx.ArMarkerControls(arToolkitContext, markerRoot, {
   		type : 'pattern',
-
-  		// patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.katakana'
-  		// patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.hiro'
-  		// patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.flower'
-  		// patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.shipsirokuro'
-  		// patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.shipcolor'
-  		// patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.home'
-  		// patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.fanfan'
-  		patternUrl : '../patt.ship1120c'
-  		// patternUrl : THREEx.ArToolkitContext.baseURL + '../data/data/patt.ship'
+  		patternUrl : 'data/patt.ship1120c'
   	})
 
   	// build a smoothedControls
@@ -187,7 +173,8 @@
   	//		render the whole thing on the page
   	//////////////////////////////////////////////////////////////////////////////////
   	var stats = new Stats();
-  	document.body.appendChild( stats.dom );
+  	// document.body.appendChild( stats.dom );
+    document.body.appendChild( stats.domElement );
   	// render the scene
   	onRenderFcts.push(function(){
   		renderer.render( scene, camera );
